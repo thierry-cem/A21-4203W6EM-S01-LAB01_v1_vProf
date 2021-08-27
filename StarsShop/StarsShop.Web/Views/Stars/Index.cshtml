@@ -1,0 +1,24 @@
+﻿@model IEnumerable<StarsShop.Web.Models.Star>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container p-3">
+    <div class="row">
+        @foreach (Star item in this.ViewBag.MyStarList)
+        {
+            <div href="#" class="card  border m-3 text-center bg-warning" style="width: 20rem; background-image: url('/pictures/layout/background-light.jpg'); background-size:cover ">
+                <div class="card-body  text-warning">
+                    <h3 class="card-title"> @item.Name </h3>
+                    <h5> @item.Magnitude </h5>
+                </div>
+            </div>
+        }
+    </div>
+</div>
